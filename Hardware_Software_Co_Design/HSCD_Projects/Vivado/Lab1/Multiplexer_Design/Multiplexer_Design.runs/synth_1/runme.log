@@ -1,0 +1,29 @@
+
+*** Running vivado
+    with args -log mux_2to1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mux_2to1.tcl
+
+
+
+****** Vivado v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Sun Aug 18 16:10:39 2024
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source mux_2to1.tcl -notrace
+create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 513.762 ; gain = 198.234
+Command: read_checkpoint -auto_incremental -incremental {E:/BitsPilaniMTech/S1_Hardware Software Co-Design/Projects/Vivado/Lab1/Multiplexer_Design/Multiplexer_Design.srcs/utils_1/imports/synth_1/mux_2to1.dcp}
+INFO: [Vivado 12-5825] Read reference checkpoint from E:/BitsPilaniMTech/S1_Hardware Software Co-Design/Projects/Vivado/Lab1/Multiplexer_Design/Multiplexer_Design.srcs/utils_1/imports/synth_1/mux_2to1.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top mux_2to1 -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 8028
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 974.168 ; gain = 447.328
+---------------------------------------------------------------------------------
