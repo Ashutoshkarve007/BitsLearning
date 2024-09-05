@@ -1,0 +1,6 @@
+--cpu ARM7TDMI
+".\objects\add_32bit.o"
+--strict --scatter ".\Objects\Add_32bit.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\Add_32bit.map" -o .\Objects\Add_32bit.axf

@@ -1,0 +1,58 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; ALP FOR ADDITION OF 8-bit
+    2 00000000         ; NAME: ASHUTOSH KARVE
+    3 00000000         ; ROLL NO: 
+    4 00000000         ;
+    5 00000000         
+    6 00000000                 AREA             RESET, CODE, READONLY
+    7 00000000                 ENTRY
+    8 00000000         
+    9 00000000 E3A0000A 
+                       STRAT   MOV              R0, #10
+   10 00000004 E3A01003        MOV              R1, #03
+   11 00000008 E0802001        ADD              R2, R0, R1
+   12 0000000C EAFFFFFE 
+                       STOP    B                STOP        ; equivalent to whi
+                                                            le(1)
+   13 00000010                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\addition.d -o.\objects\addition.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5
+\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EVAL SETA 1" --p
+redefine="__UVISION_VERSION SETA 526" --list=.\listings\addition.lst addition.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 6 in file addition.s
+   Uses
+      None
+Comment: RESET unused
+STOP 0000000C
+
+Symbol: STOP
+   Definitions
+      At line 12 in file addition.s
+   Uses
+      At line 12 in file addition.s
+Comment: STOP used once
+STRAT 00000000
+
+Symbol: STRAT
+   Definitions
+      At line 9 in file addition.s
+   Uses
+      None
+Comment: STRAT unused
+3 symbols
+335 symbols in table

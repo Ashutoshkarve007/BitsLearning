@@ -1,0 +1,13 @@
+; ALP FOR ADDITION OF 8-bit
+; NAME: ASHUTOSH KARVE
+; ROLL NO: 
+;
+
+		AREA RESET, CODE, READONLY
+		ENTRY
+
+STRAT	MOV R0, #10
+		MOV R1, #03
+		ADD R2, R0, R1
+STOP	B STOP ; equivalent to while(1)
+		END

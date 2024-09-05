@@ -1,0 +1,123 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; ALP FOR ADDITION OF 32-BIT
+    2 00000000         ; NAME: Ashutosh.R.Karve
+    3 00000000         ; Roll No: 01021
+    4 00000000         
+    5 00000000                 AREA             RESET, CODE, READONLY
+    6 00000000                 ENTRY
+    7 00000000 E321F010        MSR              CPSR_C, #0x10 ;to switch in use
+                                                            r mode, if you want
+                                                             to move in user mo
+                                                            de // use instructi
+                                                            on as MSR 
+    8 00000004 E59F4020        LDR              R4, =src1   ; Load the address 
+                                                            of src in R4 reg
+    9 00000008 E4941004        LDR              R1, [R4], #4 ; Loading num1 in 
+                                                            R1 , Post Indexing
+   10 0000000C E4942004        LDR              R2, [R4], #4 ; Loading num2 in 
+                                                            R2 , Post Indexing
+   11 00000010         
+   12 00000010 E0810002        ADD              R0, R1, R2  ; R0 = R1 + R2
+   13 00000014         
+   14 00000014 E59F5014        LDR              R5, =sum    ; Loading the addre
+                                                            ss of sum into R5
+   15 00000018 E5850000        STR              R0, [R5]    ; Store the result 
+                                                            on memory
+   16 0000001C         ;MSR CPSR_C, #0xD3 ;to switch in user mode // test
+   17 0000001C         
+   18 0000001C EAFFFFFE 
+                       stop    B                stop
+   19 00000020         
+   20 00000020         
+   21 00000020 F0000000 
+              10001000 
+              30303030 src     DCD              0xF0000000, 0x10001000, 0x30303
+030 
+                                                            ; Constants in code
+                                                             memory
+   22 0000002C         
+   23 0000002C 00000000 
+              00000000         AREA             MYDATA, DATA, READWRITE
+   24 00000000 F0000000 
+              10001000 
+              30303030 src1    DCD              0xF0000000, 0x10001000, 0x30303
+030
+   25 0000000C 00000011 
+                       sum     DCD              0x11        ;Variable declarati
+                                                            on   //DCD for 32 b
+                                                            its 
+   26 00000010         
+   27 00000010                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\add_32bit.d -o.\objects\add_32bit.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_
+v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EVAL SETA 1" -
+-predefine="__UVISION_VERSION SETA 526" --list=.\listings\add_32bit.lst add_32b
+it.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 5 in file add_32bit.s
+   Uses
+      None
+Comment: RESET unused
+src 00000020
+
+Symbol: src
+   Definitions
+      At line 21 in file add_32bit.s
+   Uses
+      None
+Comment: src unused
+stop 0000001C
+
+Symbol: stop
+   Definitions
+      At line 18 in file add_32bit.s
+   Uses
+      At line 18 in file add_32bit.s
+Comment: stop used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MYDATA 00000000
+
+Symbol: MYDATA
+   Definitions
+      At line 23 in file add_32bit.s
+   Uses
+      None
+Comment: MYDATA unused
+src1 00000000
+
+Symbol: src1
+   Definitions
+      At line 24 in file add_32bit.s
+   Uses
+      At line 8 in file add_32bit.s
+Comment: src1 used once
+sum 0000000C
+
+Symbol: sum
+   Definitions
+      At line 25 in file add_32bit.s
+   Uses
+      At line 14 in file add_32bit.s
+Comment: sum used once
+3 symbols
+340 symbols in table
