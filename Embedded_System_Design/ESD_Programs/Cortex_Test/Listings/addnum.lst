@@ -1,0 +1,129 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; Title   : Addition of num
+    2 00000000         ; Name    : Ashutosh Rajendra Karve
+    3 00000000         ; Bits-ID : 2024ht01021
+    4 00000000         
+    5 00000000 00000002 
+                       varB    EQU              2
+    6 00000000 00000004 
+                       varC    EQU              4
+    7 00000000 00000006 
+                       varD    EQU              6
+    8 00000000                 AREA             RESET, CODE, READONLY
+    9 00000000                 EXPORT           __Vectors
+   10 00000000         __Vectors
+   11 00000000 20001000        DCD              0x20001000  ; Stack pointer val
+                                                            ue when stack is em
+                                                            pty
+   12 00000004 00000001        DCD              Reset_Handler+1 ; reset vector
+   13 00000008         
+   14 00000008                 AREA             mycode, CODE, READONLY
+   15 00000000                 ENTRY
+   16 00000000                 EXPORT           Reset_Handler
+   17 00000000         Reset_Handler
+   18 00000000 F04F 0102       MOV              R1,#varB
+   19 00000004 F04F 0204       MOV              R2,#varC
+   20 00000008 F04F 0306       MOV              R3,#varD
+   21 0000000C         
+   22 0000000C EB01 0002       ADD              R0,R1,R2
+   23 00000010 4418            ADD              R0,R0,R3
+   24 00000012 E7FE    Stop    B                Stop
+   25 00000014                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\addnum.d -o.\objects\addnum.o -I.\RTE\_Target_1 -IC:\
+Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\In
+clude -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="_
+_UVISION_VERSION SETA 526" --predefine="STM32F407xx SETA 1" --list=.\listings\a
+ddnum.lst addnum.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 8 in file addnum.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 10 in file addnum.s
+   Uses
+      At line 9 in file addnum.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 17 in file addnum.s
+   Uses
+      At line 12 in file addnum.s
+      At line 16 in file addnum.s
+
+Stop 00000012
+
+Symbol: Stop
+   Definitions
+      At line 24 in file addnum.s
+   Uses
+      At line 24 in file addnum.s
+Comment: Stop used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 14 in file addnum.s
+   Uses
+      None
+Comment: mycode unused
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+varB 00000002
+
+Symbol: varB
+   Definitions
+      At line 5 in file addnum.s
+   Uses
+      At line 18 in file addnum.s
+Comment: varB used once
+varC 00000004
+
+Symbol: varC
+   Definitions
+      At line 6 in file addnum.s
+   Uses
+      At line 19 in file addnum.s
+Comment: varC used once
+varD 00000006
+
+Symbol: varD
+   Definitions
+      At line 7 in file addnum.s
+   Uses
+      At line 20 in file addnum.s
+Comment: varD used once
+3 symbols
+342 symbols in table
