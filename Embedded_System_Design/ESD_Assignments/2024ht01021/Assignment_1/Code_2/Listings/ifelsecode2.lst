@@ -1,0 +1,128 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; TITLE     : Assignment 1 Implement and debug IF-ELSE C
+                       ode 2
+    2 00000000         ; NAME    : ASHUTOSH RAJENDRA KARVE
+    3 00000000         ; BITS-ID   : 2024ht01021
+    4 00000000         ; DATE    : 07/09/2024
+    5 00000000         ; PLACE    : PUNE
+    6 00000000         
+    7 00000000                 AREA             RESET, CODE, READONLY
+    8 00000000                 ENTRY
+    9 00000000         START
+   10 00000000 E28F4034        ADR              R4,SRC
+   11 00000004 E59F5040        LDR              R5,=DST
+   12 00000008 EB000000        BL               SUB1
+   13 0000000C EAFFFFFE 
+                       STOP    B                STOP
+   14 00000010         
+   15 00000010 E4940004 
+                       SUB1    LDR              R0,[R4],#4
+   16 00000014 E4941004        LDR              R1,[R4],#4
+   17 00000018 E1500001        CMP              R0,R1
+   18 0000001C E4940004        LDR              R0,[R4],#4
+   19 00000020 E5941000        LDR              R1,[R4]
+   20 00000024 B3A02005        MOVLT            R2,#5
+   21 00000028 B5852000        STRLT            R2,[R5]
+   22 0000002C B0800001        ADDLT            R0,R0,R1
+   23 00000030 A0400001        SUBGE            R0,R0,R1
+   24 00000034 E5850004        STR              R0,[R5,#4]
+   25 00000038         
+   26 00000038 E1A0F00E 
+                       AFT     MOV              PC,LR
+   27 0000003C 00000040 
+              00000040 
+              00000030 
+              00000010 SRC     DCD              0x40, 0x40, 0x30, 0x10
+   28 0000004C 00000000        AREA             RESULT, DATA, READONLY
+   29 00000000 00000000 
+              00000000 DST     DCD              0,0
+   30 00000008                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\ifelsecode2.d -o.\objects\ifelsecode2.o -IC:\Keil_v5\ARM\RV31\INC -IC:\K
+eil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EVAL SETA 
+1" --predefine="__UVISION_VERSION SETA 526" --list=.\listings\ifelsecode2.lst i
+fElseCode2.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+AFT 00000038
+
+Symbol: AFT
+   Definitions
+      At line 26 in file ifElseCode2.s
+   Uses
+      None
+Comment: AFT unused
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 7 in file ifElseCode2.s
+   Uses
+      None
+Comment: RESET unused
+SRC 0000003C
+
+Symbol: SRC
+   Definitions
+      At line 27 in file ifElseCode2.s
+   Uses
+      At line 10 in file ifElseCode2.s
+Comment: SRC used once
+START 00000000
+
+Symbol: START
+   Definitions
+      At line 9 in file ifElseCode2.s
+   Uses
+      None
+Comment: START unused
+STOP 0000000C
+
+Symbol: STOP
+   Definitions
+      At line 13 in file ifElseCode2.s
+   Uses
+      At line 13 in file ifElseCode2.s
+Comment: STOP used once
+SUB1 00000010
+
+Symbol: SUB1
+   Definitions
+      At line 15 in file ifElseCode2.s
+   Uses
+      At line 12 in file ifElseCode2.s
+Comment: SUB1 used once
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 29 in file ifElseCode2.s
+   Uses
+      At line 11 in file ifElseCode2.s
+Comment: DST used once
+RESULT 00000000
+
+Symbol: RESULT
+   Definitions
+      At line 28 in file ifElseCode2.s
+   Uses
+      None
+Comment: RESULT unused
+2 symbols
+342 symbols in table

@@ -1,0 +1,6 @@
+--cpu ARM7TDMI
+".\objects\ifelsecode2.o"
+--strict --scatter ".\Objects\2024ht01021_Code2_If_Else.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\2024ht01021_Code2_If_Else.map" -o .\Objects\2024ht01021_Code2_If_Else.axf
