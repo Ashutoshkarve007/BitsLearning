@@ -1,0 +1,33 @@
+; Title		: Assignment 1 Implement IF-ELSE 
+; Name		: Ashutosh Rajendra Karve
+; Bits-ID	: 2024ht01021
+; Date		: 07/09/2024
+; Place		: Pune
+
+		AREA RESET, CODE, READONLY
+		ENTRY
+START
+	ADR	R4,SRC
+		LDR R5,=DST
+		BL SUB1
+STOP	B STOP
+SUB1	LDR R0,[R4],#4
+		LDR R1,[R4],#4
+		CMP R0,R1		
+		BGE		FB1
+		LDR	R0,[R4],#4
+		LDR R1,[R4],#4
+		ADD R0,R0,R1
+		MOV R2,#5
+		STR R2,[R5],#4
+		STR R0,[R5]
+		B 		AFT
+FB1		LDR R0,[R4],#4
+		LDR	R1,[R4]
+		SUB	R0,R0,R1
+		STR R0,[R5,#4]
+AFT MOV PC,LR
+SRC	DCD	0X20, 0X30, 0X30, 0X10
+	AREA RESULT, DATA, READONLY
+DST	DCD 0, 0
+	END

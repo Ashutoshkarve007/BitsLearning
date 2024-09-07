@@ -1,0 +1,139 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; Title  : Assignment 1 Implement IF-ELSE 
+    2 00000000         ; Name  : Ashutosh Rajendra Karve
+    3 00000000         ; Bits-ID : 2024ht01021
+    4 00000000         ; Date  : 07/09/2024
+    5 00000000         ; Place  : Pune
+    6 00000000         
+    7 00000000                 AREA             RESET, CODE, READONLY
+    8 00000000                 ENTRY
+    9 00000000         START
+   10 00000000 E28F4048        ADR              R4,SRC
+   11 00000004 E59F5054        LDR              R5,=DST
+   12 00000008 EB000000        BL               SUB1
+   13 0000000C EAFFFFFE 
+                       STOP    B                STOP
+   14 00000010 E4940004 
+                       SUB1    LDR              R0,[R4],#4
+   15 00000014 E4941004        LDR              R1,[R4],#4
+   16 00000018 E1500001        CMP              R0,R1
+   17 0000001C AA000006        BGE              FB1
+   18 00000020 E4940004        LDR              R0,[R4],#4
+   19 00000024 E4941004        LDR              R1,[R4],#4
+   20 00000028 E0800001        ADD              R0,R0,R1
+   21 0000002C E3A02005        MOV              R2,#5
+   22 00000030 E4852004        STR              R2,[R5],#4
+   23 00000034 E5850000        STR              R0,[R5]
+   24 00000038 EA000003        B                AFT
+   25 0000003C E4940004 
+                       FB1     LDR              R0,[R4],#4
+   26 00000040 E5941000        LDR              R1,[R4]
+   27 00000044 E0400001        SUB              R0,R0,R1
+   28 00000048 E5850004        STR              R0,[R5,#4]
+   29 0000004C E1A0F00E 
+                       AFT     MOV              PC,LR
+   30 00000050 00000020 
+              00000030 
+              00000030 
+              00000010 SRC     DCD              0X20, 0X30, 0X30, 0X10
+   31 00000060 00000000        AREA             RESULT, DATA, READONLY
+   32 00000000 00000000 
+              00000000 DST     DCD              0, 0
+   33 00000008                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\ifelsecode1.d -o.\objects\ifelsecode1.o -IC:\Keil_v5\ARM\RV31\INC -IC:\K
+eil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EVAL SETA 
+1" --predefine="__UVISION_VERSION SETA 526" --list=.\listings\ifelsecode1.lst i
+fElseCode1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+AFT 0000004C
+
+Symbol: AFT
+   Definitions
+      At line 29 in file ifElseCode1.s
+   Uses
+      At line 24 in file ifElseCode1.s
+Comment: AFT used once
+FB1 0000003C
+
+Symbol: FB1
+   Definitions
+      At line 25 in file ifElseCode1.s
+   Uses
+      At line 17 in file ifElseCode1.s
+Comment: FB1 used once
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 7 in file ifElseCode1.s
+   Uses
+      None
+Comment: RESET unused
+SRC 00000050
+
+Symbol: SRC
+   Definitions
+      At line 30 in file ifElseCode1.s
+   Uses
+      At line 10 in file ifElseCode1.s
+Comment: SRC used once
+START 00000000
+
+Symbol: START
+   Definitions
+      At line 9 in file ifElseCode1.s
+   Uses
+      None
+Comment: START unused
+STOP 0000000C
+
+Symbol: STOP
+   Definitions
+      At line 13 in file ifElseCode1.s
+   Uses
+      At line 13 in file ifElseCode1.s
+Comment: STOP used once
+SUB1 00000010
+
+Symbol: SUB1
+   Definitions
+      At line 14 in file ifElseCode1.s
+   Uses
+      At line 12 in file ifElseCode1.s
+Comment: SUB1 used once
+7 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 32 in file ifElseCode1.s
+   Uses
+      At line 11 in file ifElseCode1.s
+Comment: DST used once
+RESULT 00000000
+
+Symbol: RESULT
+   Definitions
+      At line 31 in file ifElseCode1.s
+   Uses
+      None
+Comment: RESULT unused
+2 symbols
+343 symbols in table
