@@ -1,0 +1,177 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; Title  : SVC Test Program
+    2 00000000         ; Name  : Ashutosh Rajendra Karve
+    3 00000000         ; Bits ID : 2024ht01021
+    4 00000000         
+    5 00000000                 AREA             RESET, CODE, READONLY
+    6 00000000                 EXPORT           __Vectors
+    7 00000000         __Vectors
+    8 00000000 20001000 
+              00000001 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000001 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000         DCD              0x20001000,Reset_Handler+1,0,0,
+0,0,0,0,0,0,0,SVC_handler+1,0,0,0,0,0,0,0,0,0,0,0
+    9 0000005C         
+   10 0000005C                 AREA             mycode, CODE, READONLY
+   11 00000000                 ENTRY
+   12 00000000                 EXPORT           Reset_Handler
+   13 00000000         Reset_Handler
+   14 00000000 490A            LDR              R1,=0x20000200
+   15 00000002 F381 8809       MSR              PSP,R1
+   16 00000006         
+   17 00000006 F04F 0003       MOV              R0,#3
+   18 0000000A F380 8814       MSR              CONTROL,R0
+   19 0000000E         
+   20 0000000E 4F08            LDR              R7,=SRC
+   21 00000010 F857 1B04       LDR              R1,[R7],#4
+   22 00000014 683A            LDR              R2,[R7]
+   23 00000016 F8DF 801C       LDR              R8,=DST
+   24 0000001A DFFA            SVC              250
+   25 0000001C E7FE    STOP    B                STOP
+   26 0000001E         
+   27 0000001E         SVC_handler
+   28 0000001E B500            push{lr}
+   29 00000020         ; Write logic here
+   30 00000020         
+   31 00000020 BD00            pop{pc}
+   32 00000022         
+   33 00000022 00 00 00000030 
+              00000020 SRC     DCD              0x30,0x20
+   34 0000002C         
+   35 0000002C 20000200 
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+              00000000 
+              00000000         AREA             RES, DATA, READWRITE
+   36 00000000 00000000 
+              00000000 DST     DCD              0,0
+   37 00000008                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\svctest.d -o.\objects\svctest.o -I.\RTE\_Target_1 -IC
+:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\
+Include -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine=
+"__UVISION_VERSION SETA 526" --predefine="STM32F407xx SETA 1" --list=.\listings
+\svctest.lst SVCTEST.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 5 in file SVCTEST.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 7 in file SVCTEST.s
+   Uses
+      At line 6 in file SVCTEST.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 13 in file SVCTEST.s
+   Uses
+      At line 8 in file SVCTEST.s
+      At line 12 in file SVCTEST.s
+
+SRC 00000024
+
+Symbol: SRC
+   Definitions
+      At line 33 in file SVCTEST.s
+   Uses
+      At line 20 in file SVCTEST.s
+Comment: SRC used once
+STOP 0000001C
+
+Symbol: STOP
+   Definitions
+      At line 25 in file SVCTEST.s
+   Uses
+      At line 25 in file SVCTEST.s
+Comment: STOP used once
+SVC_handler 0000001E
+
+Symbol: SVC_handler
+   Definitions
+      At line 27 in file SVCTEST.s
+   Uses
+      At line 8 in file SVCTEST.s
+Comment: SVC_handler used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 10 in file SVCTEST.s
+   Uses
+      None
+Comment: mycode unused
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 36 in file SVCTEST.s
+   Uses
+      At line 23 in file SVCTEST.s
+Comment: DST used once
+RES 00000000
+
+Symbol: RES
+   Definitions
+      At line 35 in file SVCTEST.s
+   Uses
+      None
+Comment: RES unused
+2 symbols
+345 symbols in table

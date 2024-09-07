@@ -1,0 +1,97 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    svctest.o(RESET) refers to svctest.o(mycode) for Reset_Handler
+    svctest.o(mycode) refers to svctest.o(RES) for DST
+
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    SVCTEST.s                                0x00000000   Number         0  svctest.o ABSOLUTE
+    RESET                                    0x08000000   Section       92  svctest.o(RESET)
+    mycode                                   0x0800005c   Section       56  svctest.o(mycode)
+    $v0                                      0x0800005c   Number         0  svctest.o(mycode)
+    SVC_handler                              0x0800007b   Thumb Code     0  svctest.o(mycode)
+    SRC                                      0x08000080   Data           8  svctest.o(mycode)
+    RES                                      0x20000000   Section        8  svctest.o(RES)
+    DST                                      0x20000000   Data           8  svctest.o(RES)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPi3$EXTD16$VFPS$VFMA$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$STANDARDLIB$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __Vectors                                0x08000000   Data           0  svctest.o(RESET)
+    Reset_Handler                            0x0800005d   Thumb Code     0  svctest.o(mycode)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x0800005d
+
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000009c, Max: 0x00100000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000094, Max: 0x00100000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x08000000   0x08000000   0x0000005c   Code   RO            1    RESET               svctest.o
+    0x0800005c   0x0800005c   0x00000038   Code   RO            2  * mycode              svctest.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08000094, Size: 0x00000008, Max: 0x00020000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x08000094   0x00000008   Data   RW            3    RES                 svctest.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       148        114          0          8          0        516   svctest.o
+
+    ----------------------------------------------------------------------
+       148        114          0          8          0        516   Object Totals
+         0          0          0          0          0          0   (incl. Generated)
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+         0          0          0          0          0          0   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+       148        114          0          8          0        516   Grand Totals
+       148        114          0          8          0        516   ELF Image Totals
+       148        114          0          8          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                  148 (   0.14kB)
+    Total RW  Size (RW Data + ZI Data)                 8 (   0.01kB)
+    Total ROM Size (Code + RO Data + RW Data)        156 (   0.15kB)
+
+==============================================================================
+

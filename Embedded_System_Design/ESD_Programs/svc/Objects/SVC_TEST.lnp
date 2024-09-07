@@ -1,0 +1,6 @@
+--cpu=Cortex-M4.fp
+".\objects\svctest.o"
+--strict --scatter ".\Objects\SVC_TEST.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\SVC_TEST.map" -o .\Objects\SVC_TEST.axf
