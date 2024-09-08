@@ -1,0 +1,6 @@
+--cpu=Cortex-M4.fp
+".\objects\svccompare.o"
+--strict --scatter ".\Objects\SVC_Condition.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\SVC_Condition.map" -o .\Objects\SVC_Condition.axf
