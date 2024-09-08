@@ -1,2 +1,2 @@
 Dependencies for Project '2024ht01021_Code2_If_Else', Target 'Target 1': (DO NOT MODIFY !)
-F (.\ifElseCode2.s)(0x66DC7219)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips--pd "__UVISION_VERSION SETA 526"--list .\listings\ifelsecode2.lst --xref -o .\objects\ifelsecode2.o --depend .\objects\ifelsecode2.d)
+F (.\ifElseCode2.s)(0x66DD1418)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips--pd "__UVISION_VERSION SETA 526"--list .\listings\ifelsecode2.lst --xref -o .\objects\ifelsecode2.o --depend .\objects\ifelsecode2.d)

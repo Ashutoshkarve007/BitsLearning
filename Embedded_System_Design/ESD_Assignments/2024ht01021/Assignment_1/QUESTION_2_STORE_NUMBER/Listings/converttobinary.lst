@@ -1,0 +1,100 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; TITLE      : Assignment 1 count the number of 0’s and 
+                       1’s in the last 5 digits of your BITS ID 
+    2 00000000         ; NAME       : ASHUTOSH RAJENDRA KARVE
+    3 00000000         ; BITS-ID    : 2024ht01021
+    4 00000000         ; DATE       : 07/09/2024
+    5 00000000         ; PLACE      : PUNE
+    6 00000000         
+    7 00000000                 AREA             RESET, CODE, READONLY
+    8 00000000                 ENTRY
+    9 00000000         
+   10 00000000         START
+   11 00000000 E28F4044        ADR              R4, SRC     ; Load the address 
+                                                            of the BITS ID (010
+                                                            21)
+   12 00000004 E5945000        LDR              R5, [R4]    ; Load the value (0
+                                                            1021) into R5
+   13 00000008 E24F6010        ADR              R6, DST     ; Load the address 
+                                                            of DST to store res
+                                                            ults
+   14 0000000C EB000000        BL               SUB1        ; Call the SUB1 fun
+                                                            ction to count 0's 
+                                                            and 1's
+   15 00000010         STOP
+   16 00000010 EAFFFFFE        B                STOP        ; Infinite loop to 
+                                                            stop the program
+   17 00000014         
+   18 00000014         SUB1
+   19 00000014 E3A00000        MOV              R0, #0      ; Initialize R0 to 
+                                                            store the count of 
+                                                            0's
+   20 00000018 E3A01000        MOV              R1, #0      ; Initialize R1 to 
+                                                            store the count of 
+                                                            1's
+   21 0000001C E3A0300A        MOV              R3, #10     ; Set loop counter 
+                                                            for 10 bits (last 5
+                                                             digits of the BITS
+                                                             ID)
+   22 00000020         
+   23 00000020         LOOP
+   24 00000020 E3150001        TST              R5, #1      ; Test if the least
+                                                             significant bit is
+                                                             1
+   25 00000024 0A000001        BEQ              COUNT_ZERO  ; If the bit is 0, 
+                                                            branch to COUNT_ZER
+                                                            O
+   26 00000028 E2811001        ADD              R1, R1, #1  ; Increment R1 (cou
+                                                            nt of 1's)
+   27 0000002C EA000000        B                NEXT_BIT    ; Jump to NEXT_BIT
+   28 00000030         
+   29 00000030         COUNT_ZERO
+   30 00000030 E2800001        ADD              R0, R0, #1  ; Increment R0 (cou
+                                                            nt of 0's)
+   31 00000034         
+   32 00000034         NEXT_BIT
+   33 00000034 E1A050A5        LSR              R5, R5, #1  ; Logical shift rig
+                                                            ht to check the nex
+                                                            t bit
+   34 00000038 E2533001        SUBS             R3, R3, #1  ; Decrement the bit
+                                                             counter
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   35 0000003C 1AFFFFF7        BNE              LOOP        ; If R3 is not zero
+                                                            , repeat the loop
+   36 00000040         
+   37 00000040 E5860000        STR              R0, [R6]    ; Store the count o
+                                                            f 0's in DST[0]
+   38 00000044 E5861004        STR              R1, [R6, #4] ; Store the count 
+                                                            of 1's in DST[1]
+   39 00000048         
+   40 00000048 E12FFF1E        BX               LR          ; Return from the f
+                                                            unction
+   41 0000004C         
+   42 0000004C 000003FD 
+                       SRC     DCD              1021        ; Define the BITS I
+                                                            D value (01021) in 
+                                                            decimal
+   43 00000050         
+   44 00000050                 AREA             RESULT, DATA, READWRITE
+   45 00000000 00000000 
+              00000000 DST     DCD              0,0         ; Define two words 
+                                                            to store the count 
+                                                            of 0's (DST[0]) and
+                                                             1's (DST[1])
+   46 00000008         
+   47 00000008                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\converttobinary.d -o.\objects\converttobinary.o -IC:\Keil_v5\ARM\RV31\IN
+C -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EV
+AL SETA 1" --predefine="__UVISION_VERSION SETA 526" --list=.\listings\convertto
+binary.lst ConvertToBinary.s
