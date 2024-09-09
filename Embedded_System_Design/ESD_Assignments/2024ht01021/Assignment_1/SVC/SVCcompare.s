@@ -12,49 +12,51 @@ __Vectors
 		AREA mycode,CODE, READONLY
 		ENTRY
 		EXPORT Reset_Handler
-			
+
 Reset_Handler
-		LDR	R1,=0x20000200
-		MSR	PSP,R1
-		
-		MOV	R0, #3
+		LDR R1, =0x20000200
+		MSR PSP, R1
+
+		MOV R0, #3
 		MSR CONTROL, R0
-		
-		LDR	R7,=SRC
-		LDR	R1,[R7],#4
-		LDR R2,[R7]
-		LDR	R8,=DST					; Address to store the result
-		SVC	21                      ; svc number is 21 as last 2 digit of BITS ID (01021)
-STOP	B STOP
+		LDR R7, =SRC
+		LDR R1, [R7]                 ; Load first parameter (1021)
+		LDR R2, [R7, #4]             ; Load second parameter (1021)
+		LDR R8, =DST
+    
+		SVC 21                       ; SVC call with number 21
+STOP    B STOP
+
 
 SVC_handler
-		PUSH {lr}               ; Save the link register
-		MRS R3, CONTROL         ; Get current control value
-		CMP R3, #3              ; Check if it's in unprivileged mode
-		BEQ handle_svc
+		PUSH {lr}
+		TST LR, #4
+		ITE EQ
+		MRSEQ R0, MSP
+		MRSNE R0, PSP
 
-handle_svc
-		LDR R0, [R7]            ; Load first parameter into R0
-		LDR R1, [R7, #4]        ; Load second parameter into R1
+		LDR R1, [R0, #24]            ; Load the return address
+		LDRB R1, [R1, #-2]           ; Extract SVC number
 
-		LDRB R2, [lr, #-2]      ; Load the SVC number from the instruction
-		CMP R2, #21             ; Check if SVC number matches 21
-		BEQ add_params          ; If match, perform addition
+		CMP R1, #21                  ; Compare SVC number with 21
+		BNE Subtract               ; If not 21, go to Subtract
 
-subtract_params
-		SUB R0, R0, R1          ; If not, subtract parameters
-		STR R0, [R8]            ; Store the result in DST
-		B return_from_svc
+		; If SVC number matches, perform addition
+		ADD R0, R1, R2              ; R0 = R1 + R2
+		STR R0, [R8]                ; Store result in DST
+		B EndSVC                    ; End of SVC handler
 
-add_params
-		ADD R0, R0, R1          ; Add the parameters
-		STR R0, [R8]            ; Store the result in DST
+Subtract
+		; If SVC number does not match, perform subtraction
+		SUB R0, R1, R2              ; R0 = R1 - R2
+		STR R0, [R8]                ; Store result in DST
 
-return_from_svc
-		POP {pc}                ; Return from the handler
-		
-SRC	DCD	1021, 1021
-	
-	AREA RESS, DATA, READWRITE
-DST DCD 0, 0
-	END
+EndSVC
+		POP {pc}
+
+; Data Section
+SRC	DCD 1021, 1021           ; Parameters (last 5 digits of BITS ID)
+DST	DCD 0                    ; Destination to store the result
+
+		AREA RES, DATA, READWRITE
+		END
