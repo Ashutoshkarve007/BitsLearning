@@ -26,6 +26,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "usbd_cdc_if.h"
+#include <stdlib.h>
+#include <time.h>
+#include "string.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,7 +49,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+//char msg[] = "Hello from STM32 USB\n";
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -100,7 +103,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
+		char msg[] = "Hello from STM32 for USB Testing setup\n";
+		CDC_Transmit_FS((uint8_t*)msg, strlen(msg));
+		HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
