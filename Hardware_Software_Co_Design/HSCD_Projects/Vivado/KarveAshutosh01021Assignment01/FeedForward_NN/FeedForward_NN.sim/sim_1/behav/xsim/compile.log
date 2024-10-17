@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/BitsPilaniMTech/Learning/BitsLearning/Hardware_Software_Co_Design/HSCD_Projects/Vivado/KarveAshutosh01021Assignment01/FeedForward_NN/FeedForward_NN.srcs/sources_1/new/feedforward_nn.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module feedforward_nn
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/BitsPilaniMTech/Learning/BitsLearning/Hardware_Software_Co_Design/HSCD_Projects/Vivado/KarveAshutosh01021Assignment01/FeedForward_NN/FeedForward_NN.srcs/sim_1/new/tb_feedforward_nn.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_feedforward_nn

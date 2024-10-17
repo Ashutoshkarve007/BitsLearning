@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Fri Oct 11 01:49:55 2024
-# Process ID: 7268
+# Start of session at: Fri Oct 11 09:11:11 2024
+# Process ID: 17388
 # Current directory: E:/BitsPilaniMTech/Learning/BitsLearning/Hardware_Software_Co_Design/HSCD_Projects/Vivado/KarveAshutosh01021Assignment01/FeedForward_NN/FeedForward_NN.runs/synth_1
 # Command line: vivado.exe -log feedforward_nn.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source feedforward_nn.tcl
 # Log file: E:/BitsPilaniMTech/Learning/BitsLearning/Hardware_Software_Co_Design/HSCD_Projects/Vivado/KarveAshutosh01021Assignment01/FeedForward_NN/FeedForward_NN.runs/synth_1/feedforward_nn.vds
@@ -19,6 +19,6 @@
 # Host memory       :8506 MB
 # Swap memory       :5637 MB
 # Total Virtual     :14143 MB
-# Available Virtual :3328 MB
+# Available Virtual :5743 MB
 #-----------------------------------------------------------
 source feedforward_nn.tcl -notrace

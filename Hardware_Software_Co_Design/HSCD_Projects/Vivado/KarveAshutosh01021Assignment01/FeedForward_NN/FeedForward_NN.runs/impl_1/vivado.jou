@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Fri Oct 11 09:12:37 2024
+# Process ID: 13776
+# Current directory: E:/BitsPilaniMTech/Learning/BitsLearning/Hardware_Software_Co_Design/HSCD_Projects/Vivado/KarveAshutosh01021Assignment01/FeedForward_NN/FeedForward_NN.runs/impl_1
+# Command line: vivado.exe -log feedforward_nn.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source feedforward_nn.tcl -notrace
+# Log file: E:/BitsPilaniMTech/Learning/BitsLearning/Hardware_Software_Co_Design/HSCD_Projects/Vivado/KarveAshutosh01021Assignment01/FeedForward_NN/FeedForward_NN.runs/impl_1/feedforward_nn.vdi
+# Journal file: E:/BitsPilaniMTech/Learning/BitsLearning/Hardware_Software_Co_Design/HSCD_Projects/Vivado/KarveAshutosh01021Assignment01/FeedForward_NN/FeedForward_NN.runs/impl_1\vivado.jou
+# Running On        :Ashutosh
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22631
+# Processor Detail  :Intel(R) Core(TM) i5-9300HF CPU @ 2.40GHz
+# CPU Frequency     :2400 MHz
+# CPU Physical cores:4
+# CPU Logical cores :8
+# Host memory       :8506 MB
+# Swap memory       :5637 MB
+# Total Virtual     :14143 MB
+# Available Virtual :5800 MB
+#-----------------------------------------------------------
+source feedforward_nn.tcl -notrace
