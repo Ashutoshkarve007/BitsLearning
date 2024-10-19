@@ -1,0 +1,4 @@
+Dependencies for Project 'Timer_2_Second_Delay', Target 'Target 1': (DO NOT MODIFY !)
+F (.\LPC2300.s)(0x559CFDE8)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips--pd "__UVISION_VERSION SETA 526"--list .\listings\lpc2300.lst --xref -o .\objects\lpc2300.o --depend .\objects\lpc2300.d)
+F (.\timer_delay.c)(0x6713A849)(--c99 --gnu -c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\timer_delay.o --omf_browse .\objects\timer_delay.crf --depend .\objects\timer_delay.d)
+I (C:\Keil_v5\ARM\INC\Philips\LPC23xx.h)(0x559CFE30)
